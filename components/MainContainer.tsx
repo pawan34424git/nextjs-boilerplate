@@ -8,7 +8,7 @@ const MainContainer = ({ children }: IMainContainerProps) => {
     <>
       <div className="min-h-full">
         <main>
-          <div className="flex rounded m-0 p-0 dark:bg-slate-800 bg-slate-100 shadow-inner px-2 py-1 ">
+          <div className="flex rounded m-0 p-0 dark:bg-slate-800  shadow-inner px-2 py-1 ">
             {children}
           </div>
         </main>
