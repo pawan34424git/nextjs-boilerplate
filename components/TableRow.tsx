@@ -29,7 +29,6 @@ const ActionColumn = ({ data }: ITableColumn) => {
 };
 
 const TableRow = ({ row, cols }: ITableRow) => {
-  console.log({ row, cols });
   return (
     <tr>
       {cols.map((col: string) =>

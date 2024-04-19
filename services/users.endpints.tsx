@@ -5,13 +5,15 @@ import axios, { AxiosPromise } from "axios";
 
 const BASE_API_URI = "https://hub.dummyapis.com";
 
-export interface IUserListResponse extends FetchError {
-  data: IUser[];
+export interface IUserListResponse
+  extends FetchError,
+    Omit<AxiosPromise, "data"> {
+  data?: IUser[];
 }
 
-export const getUserList: (
-  noofRecords: number
-) => AxiosPromise<IUserListResponse> = async (noofRecords) => {
+export const getUserList: (noofRecords: number) => IUserListResponse = async (
+  noofRecords
+) => {
   const headers = getDefaultHeaders();
   const apiUrl = `${BASE_API_URI}/employee?${buildParams({ noofRecords })}`;
   return axios.get(apiUrl, { headers });

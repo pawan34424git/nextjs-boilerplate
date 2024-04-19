@@ -5,4 +5,7 @@ export interface IUser {
   lastName?: string;
   role?: string;
   profileUrl?: string;
+  address?: string;
+  contactNumber?: string;
+  email?: string;
 }

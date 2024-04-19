@@ -2,8 +2,9 @@ import { getElKey } from "@/utils/helper-utils";
 import TableRow from "./TableRow";
 
 export interface ITableColumnData {
-  value: string | number;
-  header?: string;
+  id?: string;
+  value: string | number | undefined;
+  header?: string | undefined;
   cb?: (data: ITableColumnData) => any;
 }
 
@@ -33,6 +34,9 @@ interface ITable {
   data?: ITableRowData[];
 }
 const Table = ({ data = DUMMY_DATA }: ITable) => {
+  if (data.length == 0) {
+    return null;
+  }
   const cols = Object.keys(data[0]);
   const displayHeaders = cols.map((key) => data[0][key].header || key);
 
