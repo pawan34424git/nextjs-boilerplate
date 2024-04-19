@@ -1,5 +1,6 @@
+import { INavigationData } from "@/models/NavigationsModels";
 import { classNames } from "@/utils/css-utils";
-import { INavigationData } from "./NavigationBar";
+import { useRouter } from "next/router";
 
 interface INavigationMenuDesktopProps {
   item: INavigationData;
@@ -9,10 +10,15 @@ const NavigationMenuDesktop = ({
   item,
   isActive = false,
 }: INavigationMenuDesktopProps) => {
+  const router = useRouter();
+
   return (
-    <a
+    <button
       key={item.name}
-      href={item.href}
+      onClick={(e) => {
+        e.preventDefault();
+        router.push(item.href);
+      }}
       className={classNames(
         isActive
           ? "bg-gray-900 text-white"
@@ -22,7 +28,7 @@ const NavigationMenuDesktop = ({
       aria-current={isActive ? "page" : undefined}
     >
       {item.name}
-    </a>
+    </button>
   );
 };
 

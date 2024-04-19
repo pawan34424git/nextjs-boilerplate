@@ -1,3 +1,4 @@
+import { INavigationData } from "@/models/NavigationsModels";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/router";
@@ -5,27 +6,19 @@ import NavigationMenu from "./NavigationMenu";
 import NavigationMenuDesktop from "./NavigationMenuDesktop";
 import ProfileMenu from "./ProfileMenu";
 
-export interface INavigationData {
-  name: string;
-  href: string;
-  current: boolean;
+export interface INavigationBarProps {
+  navigations: INavigationData[];
 }
-const navigation: INavigationData[] = [
-  { name: "Dashboard", href: "/", current: true },
-  { name: "Login", href: "/login", current: false },
-  { name: "Users", href: "/users", current: false },
-];
-
-interface INavigationBarProps {
+export interface ISMNavigationBarProps {
   open: boolean;
 }
 
-const NavigationBar = () => {
+const NavigationBar = ({ navigations = [] }: INavigationBarProps) => {
   const router = useRouter();
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
-      {({ open }: INavigationBarProps) => (
+      {({ open }: ISMNavigationBarProps) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
@@ -51,8 +44,9 @@ const NavigationBar = () => {
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    {navigations.map((item) => (
                       <NavigationMenuDesktop
+                        key={item.href}
                         item={item}
                         isActive={item.href === router.pathname}
                       />
@@ -68,9 +62,10 @@ const NavigationBar = () => {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
+              {navigations.map((item) => (
                 <NavigationMenu
                   item={item}
+                  key={item.href}
                   isActive={item.href === router.pathname}
                 />
               ))}

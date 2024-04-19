@@ -1,0 +1,5 @@
+[
+  { "name": "Dashboard", "href": "/", "current": true },
+  { "name": "Login", "href": "/login", "current": false },
+  { "name": "Users", "href": "/users", "current": false }
+]
