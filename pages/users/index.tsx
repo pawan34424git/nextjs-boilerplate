@@ -7,7 +7,7 @@ import { useCallback, useEffect, useState } from "react";
 
 const DEFAULT_NUMBER_OF_RECORD = 10;
 
-export default function Page() {
+export default function UsersPage() {
   const router = useRouter();
   const [noOfRecord, setNoOfRecord] = useState(DEFAULT_NUMBER_OF_RECORD);
   const [users, setUsers] = useState<ITableRowData[]>([]);

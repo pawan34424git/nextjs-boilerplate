@@ -8,7 +8,7 @@ interface IPageProps {
   query: ParsedUrlQuery;
 }
 
-export default function Page({
+export default function UserEditPage({
   GOOGLE_ANALYTICS_ID,
   query,
   profile,
@@ -25,11 +25,13 @@ export default function Page({
 export const getServerSideProps = async ({
   query,
 }: GetServerSidePropsContext) => {
+  const props = {
+    GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
+    profile: process.env.profile,
+    query,
+  };
+  console.log("UserEditPage -->", props);
   return {
-    props: {
-      GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
-      profile: process.env.profile,
-      query,
-    },
+    props,
   };
 };

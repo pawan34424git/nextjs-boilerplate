@@ -1,5 +1,5 @@
 import MainContainer from "@/components/MainContainer";
 
-export default function Page() {
+export default function LoginPage() {
   return <MainContainer>Login</MainContainer>;
 }
