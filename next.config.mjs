@@ -35,6 +35,13 @@ const nextConfig = {
       ],
     },
   ],
+  publicRuntimeConfig: {
+    profile: process.env.profile,
+    GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
+  },
+  serverRuntimeConfig: {
+    profile: process.env.profile,
+  },
 
   webpack: (config, { isServer }) => {
     if (!isServer) {
