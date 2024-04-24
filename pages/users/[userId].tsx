@@ -3,14 +3,21 @@ import { GetServerSidePropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
 
 interface IPageProps {
-  enviroment: string;
+  profile?: string;
+  GOOGLE_ANALYTICS_ID?: string;
   query: ParsedUrlQuery;
 }
 
-export default function Page({ enviroment, query }: IPageProps) {
+export default function Page({
+  GOOGLE_ANALYTICS_ID,
+  query,
+  profile,
+}: IPageProps) {
   return (
     <MainContainer>
-      User Id: {query.userId} - {enviroment}
+      <h1>User Id: {query.userId}</h1>
+      <h1>GOOGLE ID: {GOOGLE_ANALYTICS_ID}</h1>
+      <h1>Profile: {profile}</h1>
     </MainContainer>
   );
 }
@@ -18,10 +25,10 @@ export default function Page({ enviroment, query }: IPageProps) {
 export const getServerSideProps = async ({
   query,
 }: GetServerSidePropsContext) => {
-  console.log("SERVER-SIDE: called edit user - ", query.userId);
   return {
     props: {
-      enviroment: "dev",
+      GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
+      profile: process.env.profile,
       query,
     },
   };
