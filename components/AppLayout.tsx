@@ -1,7 +1,7 @@
 import { useGlobalContext } from "@/context/GlobalConext";
 import defaultNavigation from "@/data/common/navigation-default.json";
 import { useRouter } from "next/router";
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import NavigationBar from "./NavigationBar";
 
 interface IAppLayoutProps {
@@ -10,11 +10,7 @@ interface IAppLayoutProps {
 
 const AppLayout = ({ children }: IAppLayoutProps) => {
   const router = useRouter();
-  const { setNavigations, navigations } = useGlobalContext();
-
-  useEffect(() => {
-    setNavigations(defaultNavigation);
-  }, [router.pathname]);
+  const { navigations = defaultNavigation } = useGlobalContext();
 
   return (
     <>

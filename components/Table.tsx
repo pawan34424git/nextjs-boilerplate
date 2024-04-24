@@ -42,7 +42,10 @@ const Table = ({ data = DUMMY_DATA }: ITable) => {
 
   return (
     <>
-      <div className="shadow-2x rounded-2xl bg-white p-2 min-w-full">
+      <div
+        className="shadow-2x rounded-2xl bg-white p-2 min-w-full"
+        data-testid="table"
+      >
         <table className="table-auto min-w-full">
           <thead>
             <tr>

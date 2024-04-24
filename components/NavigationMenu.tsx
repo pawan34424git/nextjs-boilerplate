@@ -12,6 +12,7 @@ const NavigationMenu = ({ item, isActive = false }: INavigationMenuProps) => {
   return (
     <Disclosure.Button
       key={item.name}
+      data-testid={"menu-button-" + item.name}
       as="button"
       onClick={(e) => {
         e.preventDefault();

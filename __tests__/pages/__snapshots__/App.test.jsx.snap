@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Page renders correctly 1`] = `
+[
+  <nav
+    className="bg-gray-800"
+    data-headlessui-state=""
+  >
+    <div
+      className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8"
+    >
+      <div
+        className="relative flex h-16 items-center justify-between"
+      >
+        <div
+          className="absolute inset-y-0 left-0 flex items-center sm:hidden"
+        >
+          <button
+            aria-expanded={false}
+            className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            data-headlessui-state=""
+            data-testid="menu-button"
+            id="headlessui-disclosure-button-:r0:"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            type="button"
+          >
+            <span
+              className="absolute -inset-0.5"
+            />
+            <span
+              className="sr-only"
+            >
+              Open main menu
+            </span>
+            <svg
+              aria-hidden="true"
+              className="block h-6 w-6"
+              data-slot="icon"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={1.5}
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+        >
+          <div
+            className="flex flex-shrink-0 items-center"
+          >
+            <img
+              alt="Ford Pro"
+              className="h-8 w-auto"
+              src="/images/logo.jpg"
+            />
+          </div>
+          <div
+            className="hidden sm:ml-6 sm:block"
+            data-testid="desktop-screen-nav"
+          >
+            <div
+              className="flex space-x-4"
+            >
+              <button
+                className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                onClick={[Function]}
+              >
+                Dashboard
+              </button>
+              <button
+                className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                onClick={[Function]}
+              >
+                Login
+              </button>
+              <button
+                aria-current="page"
+                className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                onClick={[Function]}
+              >
+                Users
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+        >
+          <div
+            className="relative ml-3"
+            data-headlessui-state=""
+          >
+            <div>
+              <button
+                aria-expanded={false}
+                aria-haspopup="menu"
+                className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                data-headlessui-state=""
+                id="headlessui-menu-button-:r1:"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                type="button"
+              >
+                <span
+                  className="absolute -inset-1.5"
+                />
+                <span
+                  className="sr-only"
+                >
+                  Open user menu
+                </span>
+                <svg
+                  aria-hidden="true"
+                  className="h-6 w-6 rounded-full"
+                  color="white"
+                  data-slot="icon"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={1.5}
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="min-h-full"
+  >
+    <main>
+      <div
+        className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8"
+      >
+        <div
+          className="min-h-full"
+        >
+          <main>
+            <div
+              className="flex-col rounded m-0 p-0 dark:bg-slate-800  shadow-inner px-2 py-1 "
+            >
+              ROOT PAGE
+            </div>
+          </main>
+        </div>
+      </div>
+    </main>
+  </div>,
+]
+`;

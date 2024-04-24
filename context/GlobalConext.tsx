@@ -10,7 +10,6 @@ import {
 } from "react";
 
 export const GlobalContext = createContext<IGlobalContextProps>({
-  navigations: [],
   setNavigations: () => {},
   isLoggedIn: false,
   setLoggedIn: () => {},
@@ -26,7 +25,9 @@ const GlobalContextWrapper = ({
   children,
   currentRoute,
 }: PropsWithChildren<IGlobalContextWrapperProps>): JSX.Element => {
-  const [navigations, setNavigations] = useState<INavigationData[]>([]);
+  const [navigations, setNavigations] = useState<
+    INavigationData[] | undefined
+  >();
   const [isLoggedIn, setLoggedIn] = useState<boolean>(false);
   const [user, setUser] = useState<IUser>({});
 

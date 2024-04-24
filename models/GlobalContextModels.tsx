@@ -3,8 +3,8 @@ import { INavigationData } from "./NavigationsModels";
 import { IUser } from "./UserModels";
 
 export interface IGlobalContextProps {
-  navigations: INavigationData[];
-  setNavigations: Dispatch<SetStateAction<INavigationData[]>>;
+  navigations?: INavigationData[];
+  setNavigations: Dispatch<SetStateAction<INavigationData[] | undefined>>;
   isLoggedIn: boolean;
   setLoggedIn: Dispatch<SetStateAction<boolean>>;
   user: IUser;
