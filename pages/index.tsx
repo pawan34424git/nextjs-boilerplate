@@ -1,5 +1,5 @@
 import MainContainer from "@/components/MainContainer";
 
-export default function Page() {
+export default function RootPage() {
   return <MainContainer>ROOT PAGE</MainContainer>;
 }

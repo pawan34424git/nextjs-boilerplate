@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login page login page rendering 1`] = `
+<div
+  className="min-h-full"
+>
+  <main>
+    <div
+      className="flex-col rounded m-0 p-0 dark:bg-slate-800  shadow-inner px-2 py-1 "
+    >
+      Login
+    </div>
+  </main>
+</div>
+`;

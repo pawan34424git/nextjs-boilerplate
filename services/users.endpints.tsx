@@ -1,6 +1,6 @@
 import FetchError from "@/models/ErrorModels";
 import { IUser } from "@/models/UserModels";
-import client, { ClientResponse, createClient } from "@/utils/http-client";
+import client, { ClientResponse } from "@/utils/http-client";
 import { getDefaultHeaders } from "@/utils/http-utils";
 import getConfig from "next/config";
 
@@ -8,12 +8,10 @@ const { publicRuntimeConfig } = getConfig();
 
 const { CLIENT_REQUEST_TIMEOUT = 0, BASE_URL = "/" } = publicRuntimeConfig;
 
-export const usersClientInstance = createClient({
+const { GET } = client({
   BASE_URL,
   CLIENT_REQUEST_TIMEOUT,
 });
-
-const { GET } = client(usersClientInstance);
 
 export interface IUserListResponse
   extends FetchError,

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App Page renders correctly 1`] = `
+exports[`App Page main page rendering 1`] = `
 [
   <nav
     className="bg-gray-800"

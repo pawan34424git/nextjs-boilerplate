@@ -3,17 +3,25 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import AppPage from "../../pages/_app";
 import RootPage from "../../pages/index";
-
+const router: any = jest.fn();
 describe("App Page", () => {
-  it("renders correctly", () => {
+  it("main page rendering", () => {
     const tree = renderer
-      .create(<AppPage Component={() => <RootPage />} pageProps={{}} />)
+      .create(
+        <AppPage
+          Component={() => <RootPage />}
+          pageProps={{}}
+          router={router}
+        />
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it("page render", () => {
-    render(<AppPage Component={() => <RootPage />} pageProps={{}} />);
+    render(
+      <AppPage Component={() => <RootPage />} pageProps={{}} router={router} />
+    );
     const heading = screen.getByText("ROOT PAGE");
     expect(heading).toBeInTheDocument();
     expect(screen.queryByTestId("desktop-screen-nav")).toBeTruthy();
@@ -26,6 +34,6 @@ describe("App Page", () => {
     fireEvent.click(menuButton);
     expect(screen.queryByTestId("menu-button-Users")).toBeTruthy();
 
-    fireEvent.click(screen.queryByTestId("menu-button-Users"));
+    fireEvent.click(screen.getByTestId("menu-button-Users"));
   });
 });

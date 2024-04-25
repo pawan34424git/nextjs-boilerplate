@@ -4,7 +4,7 @@ import renderer from "react-test-renderer";
 import Table from "../../components/Table";
 
 describe("Table Component", () => {
-  it("renders correctly", () => {
+  it("table rendering", () => {
     const tree = renderer.create(<Table />).toJSON();
     expect(tree).toMatchSnapshot();
   });

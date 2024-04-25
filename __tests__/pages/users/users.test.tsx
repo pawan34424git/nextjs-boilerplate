@@ -6,22 +6,22 @@ import {
   screen,
   waitFor,
 } from "@testing-library/react";
-
+import renderer from "react-test-renderer";
 import {
   mockDefaultGetUsersFail,
   mockDefaultGetUsersSuccess,
-  usersMock,
-} from "../../../__mocks__/users.mock";
+} from "../../../__mocks__/users/users.mock";
 import UsersPage from "../../../pages/users/index";
 
 describe("User List page", () => {
-  beforeEach(() => {
-    usersMock.reset();
-  });
-
   afterEach(cleanup);
 
-  it("page render", async () => {
+  it("user edit rendering", () => {
+    const tree = renderer.create(<UsersPage />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("page table render", async () => {
     mockDefaultGetUsersSuccess();
     render(<UsersPage />);
 
@@ -40,7 +40,7 @@ describe("User List page", () => {
     fireEvent.click(editButton[0]);
   });
 
-  it("page render fails", async () => {
+  it("page table render fails", async () => {
     mockDefaultGetUsersFail();
     render(<UsersPage />);
 

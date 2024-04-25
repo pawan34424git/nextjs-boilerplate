@@ -30,7 +30,6 @@ export const getServerSideProps = async ({
     profile: process.env.profile,
     query,
   };
-  console.log("UserEditPage -->", props);
   return {
     props,
   };
