@@ -5,3 +5,9 @@ jest.mock("next/router", () => ({
     return { push: jest.fn(), replace: jest.fn(), pathname: "/users" };
   },
 }));
+
+jest.mock("next/config", () => () => ({
+  publicRuntimeConfig: {
+    SOME_VARIABLE_HERE: "whatever-you-want-here",
+  },
+}));

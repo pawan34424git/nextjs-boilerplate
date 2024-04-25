@@ -1,13 +1,23 @@
 import FetchError from "@/models/ErrorModels";
 import { IUser } from "@/models/UserModels";
-import { buildParams, getDefaultHeaders } from "@/utils/http-utils";
-import axios, { AxiosPromise } from "axios";
+import client, { ClientResponse, createClient } from "@/utils/http-client";
+import { getDefaultHeaders } from "@/utils/http-utils";
+import getConfig from "next/config";
 
-const BASE_API_URI = "https://hub.dummyapis.com";
+const { publicRuntimeConfig } = getConfig();
+
+const { CLIENT_REQUEST_TIMEOUT = 0, BASE_URL = "/" } = publicRuntimeConfig;
+
+export const usersClientInstance = createClient({
+  BASE_URL,
+  CLIENT_REQUEST_TIMEOUT,
+});
+
+const { GET } = client(usersClientInstance);
 
 export interface IUserListResponse
   extends FetchError,
-    Omit<AxiosPromise, "data"> {
+    Omit<ClientResponse, "data"> {
   data?: IUser[];
 }
 
@@ -15,6 +25,7 @@ export const getUserList: (noofRecords: number) => IUserListResponse = async (
   noofRecords
 ) => {
   const headers = getDefaultHeaders();
-  const apiUrl = `${BASE_API_URI}/employee?${buildParams({ noofRecords })}`;
-  return axios.get(apiUrl, { headers });
+  const uri = "/employee";
+  const apiUrl = `${uri}`;
+  return GET(apiUrl, { headers, params: { noofRecords } });
 };

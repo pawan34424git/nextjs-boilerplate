@@ -38,6 +38,8 @@ const nextConfig = {
   publicRuntimeConfig: {
     profile: process.env.profile,
     GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
+    CLIENT_REQUEST_TIMEOUT: process.env.CLIENT_REQUEST_TIMEOUT,
+    BASE_URL: process.env.BASE_URL,
   },
   serverRuntimeConfig: {
     profile: process.env.profile,

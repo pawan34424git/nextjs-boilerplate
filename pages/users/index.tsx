@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 
 const DEFAULT_NUMBER_OF_RECORD = 10;
+const LOG_TAG = "UsersPage :: ";
 
 export default function UsersPage() {
   const router = useRouter();
@@ -36,7 +37,7 @@ export default function UsersPage() {
       });
       setUsers(tableData);
     } catch (e) {
-      console.log("Error while getUserList", e);
+      console.log(`${LOG_TAG} Error while getUserList`, e);
     }
   }, [noOfRecord]);
   useEffect(() => {

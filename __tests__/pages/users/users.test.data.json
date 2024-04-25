@@ -1,0 +1,28 @@
+{
+  "sucessResponse": [
+    {
+      "id": 1001,
+      "imageUrl": "https://hub.dummyapis.com/Image?text=SH&height=120&width=120",
+      "firstName": "Stuart",
+      "lastName": "Hettinger",
+      "email": "Stuart.Hettinger@dummyapis.com",
+      "contactNumber": "4540996971",
+      "age": 77,
+      "dob": "13/07/1947",
+      "salary": 1.0,
+      "address": "Address1"
+    },
+    {
+      "id": 1002,
+      "imageUrl": "https://hub.dummyapis.com/Image?text=MO&height=120&width=120",
+      "firstName": "Margaret",
+      "lastName": "Osinski",
+      "email": "Margaret.Osinski@dummyapis.com",
+      "contactNumber": "4003990613",
+      "age": 71,
+      "dob": "14/10/1953",
+      "salary": 2.0,
+      "address": "Address2"
+    }
+  ]
+}

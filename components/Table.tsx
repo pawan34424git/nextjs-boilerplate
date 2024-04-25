@@ -35,7 +35,7 @@ interface ITable {
 }
 const Table = ({ data = DUMMY_DATA }: ITable) => {
   if (data.length == 0) {
-    return null;
+    return <p>no data found!</p>;
   }
   const cols = Object.keys(data[0]);
   const displayHeaders = cols.map((key) => data[0][key].header || key);
