@@ -46,3 +46,11 @@ export const Small = {
     label: "Button",
   },
 };
+
+export const PrmarySmall = {
+  args: {
+    primary: true,
+    size: "small",
+    label: "Button",
+  },
+};
